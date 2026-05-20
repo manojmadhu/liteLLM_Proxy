@@ -1,0 +1,14 @@
+model_list:
+  - model_name: company-llm
+    litellm_params:
+      model: openai/company-model
+      api_base: https://internal-gateway.mycompany.com/llm/v1
+      api_key: os.environ/GATEWAY_API_KEY
+      extra_headers:
+        X-Gateway-Token: os.environ/GATEWAY_TOKEN
+        X-Service-Name: "n8n-automation"
+        X-Region: "us-east-1"
+        X-Request-Source: "litellm-proxy"
+
+general_settings:
+  master_key: sk-my-master-key
